@@ -1,12 +1,17 @@
 <template>
-    <div class="flex">
-        <div class="margin-auto">
+    <div class="flex fondo">
+        <div class="margin-auto flex column">
             <div class="logo margin-auto">
                 <img src="/pokeball.png" alt="">
             </div>
             <h1 class="margin-auto">POKÉDEX</h1>
             <div class="pages">
-
+                <div class="page-card">
+                    <h3>Busca un pokémon!</h3>
+                </div>
+                <div class="page-card">
+                    <h3>Descubre un Pokémon al azar!</h3>
+                </div>
             </div>
         </div>
     </div>
@@ -31,10 +36,19 @@
 
 .flex{
     display: flex;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.fondo{
     height: 100vh;
     color: white;
-    background: radial-gradient(circle 30% 50%, rgb(255, 83, 83))/*(90deg, rgb(255, 83, 83) 0%, rgb(179, 0, 0) 20%,  rgb(179, 0, 0) 80%, rgb(255, 83, 83) 100%) */; 
-    background-color: rgb(179, 0, 0);
+    background-image: url("/fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .margin-auto{
@@ -54,5 +68,12 @@
 h1{
     font-size: 40px;
 }
+
+.pages{
+    display: flex;
+
+}
+
+
 
 </style>
