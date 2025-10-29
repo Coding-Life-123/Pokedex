@@ -13,7 +13,7 @@
 
 <template>
   <div>
-    <Buscar/>
+    <Buscar />
     <Menu />
   </div>
 </template>

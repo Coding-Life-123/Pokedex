@@ -6,11 +6,19 @@
             </div>
             <h1 class="margin-auto">POKÉDEX</h1>
             <div class="pages">
-                <div class="page-card">
-                    <h3>Busca un pokémon!</h3>
+                <div class="page-card" 
+                @mousemove="moverCursor"
+                @mouseleave="reiniciarCursor"
+                :style="{'--x': x + 'px', '--y': y + 'px'}"
+                >
+                    <h3>Busca un pokémon! -></h3>
                 </div>
-                <div class="page-card">
-                    <h3>Descubre un Pokémon al azar!</h3>
+                <div class="page-card"
+                @mousemove="moverCursor"
+                @mouseleave="reiniciarCursor"
+                :style="{'--x': x + 'px', '--y': y + 'px'}"
+                >
+                    <h3>Descubre un Pokémon! -></h3>
                 </div>
             </div>
         </div>
@@ -20,6 +28,22 @@
 <script setup>
     import { ref, defineEmits } from 'vue';
 
+    //lógica estilo mouse
+    const x = ref(150);
+    const y = ref(75);
+
+    function moverCursor(e){
+        const rect = e.target.getBoundingClientRect();
+        x.value = e.clientX - rect.left;
+        y.value = e.clientY - rect.top;
+    }
+
+    function reiniciarCursor(e){
+        x.value = 150;
+        y.value = 75;
+    }
+
+    //lógica navegación
     const emit = defineEmits(['pagina']);
 
     function decidirPag(pag){
@@ -71,8 +95,35 @@ h1{
 
 .pages{
     display: flex;
-
+    column-gap: 5%;
+    margin-top: 30px;
+    width: 600px;
 }
+
+.page-card{
+    background: linear-gradient(135deg, #ff4b2b 10%, #b31217 90%);
+    height: 50px;
+    width: 50%;
+    padding: 10px 10px;
+    border-radius: 10px;
+    display: flex;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-align: justify;
+
+
+    
+    h3{
+        margin: auto;
+    }
+}
+
+.page-card:hover{
+    transform: scale(1.08);
+    transition: 0.3s ease;
+    color: rgb(255, 255, 255);
+}
+
 
 
 
