@@ -118,6 +118,20 @@ h1{
     }
 }
 
+.page-card::before{
+    content: "";
+    position: absolute;
+    top: var(--y, 50%);
+    left: var(--x, 50%);
+    transform: translate(-50%, -50%);
+    width: 250%;
+    height: 250%;
+    background: radial-gradient(circle at center, rgba(255, 50, 50, 0.3), transparent 60%);
+    pointer-events: none;
+    opacity: var(--visible, 0);
+    transition: opacity 0.3s ease, top 0.05s linear, left 0.05s linear;
+}
+
 .page-card:hover{
     transform: scale(1.08);
     transition: 0.3s ease;
