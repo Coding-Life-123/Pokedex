@@ -6,42 +6,18 @@
             </div>
             <h1 class="margin-auto">POKÉDEX</h1>
             <div class="pages">
-                <div class="page-card" 
-                @mousemove="moverCursor"
-                @mouseleave="reiniciarCursor"
-                :style="{'--x': x + 'px', '--y': y + 'px'}"
-                >
-                    <h3>Busca un pokémon! -></h3>
-                </div>
-                <div class="page-card"
-                @mousemove="moverCursor"
-                @mouseleave="reiniciarCursor"
-                :style="{'--x': x + 'px', '--y': y + 'px'}"
-                >
-                    <h3>Descubre un Pokémon! -></h3>
-                </div>
+                <MenuCards :mensaje="'Busca un pokémon! ->'" @click="decidirPag('Buscar.vue')"/>
+                <MenuCards :mensaje="'Descubre un pokémon! ->'" @click="decidirPag('Aleatorio.vue')"/>            
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-    import { ref, defineEmits } from 'vue';
 
-    //lógica estilo mouse
-    const x = ref(150);
-    const y = ref(75);
-
-    function moverCursor(e){
-        const rect = e.target.getBoundingClientRect();
-        x.value = e.clientX - rect.left;
-        y.value = e.clientY - rect.top;
-    }
-
-    function reiniciarCursor(e){
-        x.value = 150;
-        y.value = 75;
-    }
+    console.log("putaMenu.vue");
+    import { defineEmits } from 'vue';
+    import MenuCards from './MenuCards.vue';
 
     //lógica navegación
     const emit = defineEmits(['pagina']);
@@ -95,36 +71,13 @@ h1{
 
 .pages{
     display: flex;
-    column-gap: 5%;
+    justify-content: space-around;
     margin-top: 30px;
     width: 600px;
 }
 
-.page-card{
-    background: linear-gradient(135deg, #ff4b2b 10%, #b31217 90%);
-    height: 50px;
-    width: 50%;
-    padding: 10px 10px;
-    border-radius: 10px;
-    display: flex;
-    cursor: pointer;
-    transition: 0.3s ease;
-    text-align: justify;
-
-
-    
-    h3{
-        margin: auto;
-    }
+.pages div{
+    width: fit-content;
 }
-
-.page-card:hover{
-    transform: scale(1.08);
-    transition: 0.3s ease;
-    color: rgb(255, 255, 255);
-}
-
-
-
 
 </style>

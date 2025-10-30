@@ -2,9 +2,10 @@
   import { ref } from 'vue';
   import Buscar from './components/Buscar.vue'
   import Menu from './components/Menu.vue';
+  import Aleatorio from './components/Aleatorio.vue';
 
-  let pagina = ref('')
-
+  const pagina = ref('Menu.vue')
+  console.log("putaApp.vue");
   function recibirDato(pag){
     pagina.value = pag;
     console.log(`valor recibido: `+ pag);
@@ -13,8 +14,9 @@
 
 <template>
   <div>
-    <Buscar />
-    <Menu />
+    <Buscar v-if="pagina === 'Buscar.vue'" @pagina="recibirDato" />
+    <Aleatorio v-else-if="pagina === 'Aleatorio.vue'" @pagina="recibirDato" />
+    <Menu v-else-if="pagina === 'Menu.vue'" @pagina="recibirDato" />
   </div>
 </template>
 
