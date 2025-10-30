@@ -5,7 +5,6 @@
   import Aleatorio from './components/Aleatorio.vue';
 
   const pagina = ref('Menu.vue')
-  console.log("putaApp.vue");
   function recibirDato(pag){
     pagina.value = pag;
     console.log(`valor recibido: `+ pag);

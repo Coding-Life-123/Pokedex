@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-    import { ref, defineEmits } from 'vue';
+    import { ref } from 'vue';
 
     //lógica estilo mouse
     const x = ref(150);

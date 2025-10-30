@@ -15,7 +15,6 @@
 
 <script setup>
 
-    console.log("puta")
     import { defineEmits } from 'vue';
     import MenuCards from './MenuCards.vue';
 

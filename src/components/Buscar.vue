@@ -6,7 +6,6 @@
   import axios from 'axios';
   import { ref, defineEmits } from 'vue'
 
-  console.log("putaBuscar.vue");
   async function buscarPokemon(nombre){
     let res = ref(await axios.get(`https://pokeapi.co/api/v2/pokemon/${nombre}`));
     console.log(res.value.data);
