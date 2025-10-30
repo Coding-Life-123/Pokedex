@@ -16,7 +16,7 @@
 <script setup>
 
     import { defineEmits } from 'vue';
-    import MenuCards from './MenuCards.vue';
+    import MenuCards from './menuComps/MenuCards.vue';
 
     //lógica navegación
     const emit = defineEmits(['pagina']);

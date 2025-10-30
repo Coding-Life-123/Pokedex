@@ -28,7 +28,6 @@
         const rect = e.target.getBoundingClientRect();
         x.value = e.clientX - rect.left;
         y.value = e.clientY - rect.top;
-        console.log(x, y);
     }
 </script>
 
