@@ -29,4 +29,14 @@
     font-family: 'Orbitron', sans-serif;
   }
 
+  
+  .fondo{
+    height: 99.99vh;
+    color: white;
+    background-image: url("/fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
 </style>

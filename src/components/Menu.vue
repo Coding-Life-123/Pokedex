@@ -41,15 +41,6 @@
     flex-direction: column;
 }
 
-.fondo{
-    height: 100vh;
-    color: white;
-    background-image: url("/fondo.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
 .margin-auto{
     margin: auto;
 }
