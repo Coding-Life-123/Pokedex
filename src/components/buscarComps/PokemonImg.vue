@@ -25,7 +25,8 @@ watch([()=> props.data, ()=> props.colors],([newData, newColors])=>{
     " style="
         padding: 20px;
         border-radius: 20px;
-    ">
+        width: 30%;
+        ">
         <h1 style="text-align: center;">{{ pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1) }}</h1>
         <img :src="pokemon.sprites.other.home.front_default" alt="" />
         <div style="display: flex; justify-content: space-between; width: 100%;">

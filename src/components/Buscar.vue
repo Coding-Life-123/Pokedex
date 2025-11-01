@@ -46,7 +46,6 @@ import PokemonStats from './buscarComps/PokemonStats.vue';
     data.value = res.value;
     
     stats.value = res.value.data.stats
-    console.log(stats.value);
 
     pokemonId.value = res.value.data.id
 
@@ -200,9 +199,9 @@ import PokemonStats from './buscarComps/PokemonStats.vue';
       <div class="body-container" 
       style="
         margin-top: 100px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 30px;
+        display: flex;
+        width: 100%;
+        gap: 30px;
       ">
         <PokemonImg 
           :data="data" 
@@ -217,7 +216,8 @@ import PokemonStats from './buscarComps/PokemonStats.vue';
           :colorsList="typeColors"
         />
         <PokemonStats
-
+          :pokemonStats="stats"
+          :colors="colors"
         />
       </div>
     </div>

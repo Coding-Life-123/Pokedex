@@ -33,12 +33,14 @@ const cleanWeakList = computed(()=>{
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+      width: 30%;
       margin: 0 auto;
       text-align: center;
       background-color: rgba(50, 50, 50, 0.65);
       backdrop-filter: blur(8px);
       padding: 20px;
       border-radius: 20px;
+      transition: color 1s ease;
     "
     :style="{
       color: `${colors[0]}`,
