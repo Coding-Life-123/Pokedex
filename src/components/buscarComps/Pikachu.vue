@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img :src="estadoActual" alt="">
+        <img :src="estadoActual" style="width: 100px; border-radius: 10px;" alt="">
     </div>
 </template>
 

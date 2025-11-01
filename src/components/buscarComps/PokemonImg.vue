@@ -1,42 +1,49 @@
-<template>
-    <div class="pokemon-image">
-        <img :src="imgSrc" alt="" />
-    </div>
-</template>
-
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 const props = defineProps({
-    data: Object
+    data: Object,
+    colors: Array
 })
 
-const imgSrc = ref(props.data.data.sprites.other.home.front_default);
+const pokemon = ref(props.data.data);
+const colors = ref(props.colors)
+console.log(props)
 
-const typeColors = {
-    normal: "#A8A77A",
-    fire: "#EE8130",
-    water: "#6390F0",
-    electric: "#F7D02C",
-    grass: "#7AC74C",
-    ice: "#96D9D6",
-    fighting: "#C22E28",
-    poison: "#A33EA1",
-    ground: "#E2BF65",
-    flying: "#A98FF3",
-    psychic: "#F95587",
-    bug: "#A6B91A",
-    rock: "#B6A136",
-    ghost: "#735797",
-    dragon: "#6F35FC",
-    dark: "#705746",
-    steel: "#B7B7CE",
-    fairy: "#D685AD",
-};
+watch(() => props.data,(newVal)=>{pokemon.value = newVal.data})
+console.log(pokemon)
+
+const imgSrc = ref(pokemon.value.sprites.other.home.front_default);
+const pokemonName = ref(pokemon.value.name.slice(0, 1).toUpperCase() + pokemon.value.name.slice(1,pokemon.value.name.length))
+console.log(pokemonName.value)
+
+console.log(colors.value);
+
+
+
 
 console.log(props.data.data.sprites.other.home.front_default)
 </script>
 
-<style>
+<template>
+    <div v-if="data" class="pokemon-image" :style="{
+        background: `linear-gradient(135deg, ${colors[0]}, ${colors[1]})`,
+        boxShadow: `0 0 40px ${colors[0]}`
+        }
+    " style="
+        padding: 20px;
+        border-radius: 20px;
+    ">
+        <h1 style="text-align: center;">{{ pokemonName }}</h1>
+        <img :src="imgSrc" alt="" />
+        <div style="display: flex; justify-content: space-between; width: 100%;">
+            <p style="font-size: larger;">{{ pokemon.height }}m</p>
+            <p style="font-size: larger;">{{ pokemon.weight }}kg</p>
+        </div>
+    </div>
+</template>
 
+<style>
+    .pokemon-image h2{
+    }
 </style>

@@ -9,6 +9,7 @@
     pagina.value = pag;
     console.log(`valor recibido: `+ pag);
   }
+
 </script>
 
 <template>
