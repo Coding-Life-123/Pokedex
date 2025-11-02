@@ -150,7 +150,7 @@ async function buscarRelaciones(type) {
         <PokemonImg 
           :data="data" 
           :colors="colors" 
-          style=" min-width: 300px; width: 90%; min-height: 500px; margin: auto;"
+          style=" min-width: 300px; width: 88%; min-height: 500px; margin: auto;"
         />
         <PokemonInfo
           :pokemonIndex="pokemonId"
@@ -159,12 +159,12 @@ async function buscarRelaciones(type) {
           :pokemonWeak="weak"
           :colors="colors"
           :colorsList="typeColors"
-          style=" min-width: 300px; width: 90%; min-height: 500px; margin: auto;"
+          style=" min-width: 300px; width: 88%; min-height: 500px; margin: auto;"
         />
         <PokemonStats 
           :pokemonStats="stats" 
           :colors="colors" 
-          style=" min-width: 300px; width: 90%; min-height: 500px; margin: auto;"
+          style=" min-width: 300px; width: 88%; min-height: 500px; margin: auto;"
         />
       </div>
     </div>
