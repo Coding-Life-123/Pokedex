@@ -10,7 +10,6 @@ const props = defineProps({
 const stats = computed(()=> props.pokemonStats);
 const colors = computed(()=> props.colors);
 
-console.log((stats.value[1].base_stat/255)*100)
 
 </script>
 
@@ -36,7 +35,7 @@ console.log((stats.value[1].base_stat/255)*100)
                 <div class="fill-bar" style="height: 20px; border-radius: 10px; transition: width 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);"
                 :style="{
                     width:`${(stat.base_stat/255)*100}%`,
-                    background:`linear-gradient(135deg, ${colors[0]}, ${colors[1]})`,
+                    background:`linear-gradient(160deg, ${colors[0]}, ${colors[1]})`,
                 }"></div>
             </div>
         </div>

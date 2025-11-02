@@ -6,8 +6,10 @@ let props = defineProps({
     colors: Array
 })
 
-const pokemon = computed(()=>props.data.data);
+console.log(props.data)
+const pokemon = computed(()=>props.data);
 const colors = computed(()=>props.colors);
+
 
 watch([()=> props.data, ()=> props.colors],([newData, newColors])=>{
     pokemon: newData;
