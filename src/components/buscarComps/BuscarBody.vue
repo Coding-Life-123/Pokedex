@@ -145,12 +145,11 @@ async function buscarRelaciones(type) {
     <div class="main-container" style="padding: 50px; display: flex;">
       <div
         class="body-container"
-        style="display: grid; grid-template-columns: 1.1fr 1fr 1fr; column-gap: 30px; width: 100%; gap: 30px; margin: auto; flex-wrap: wrap; justify-content: space-evenly;"
       >
         <PokemonImg 
           :data="data" 
           :colors="colors" 
-          style=" min-width: 300px; width: 88%; min-height: 500px; margin: auto;"
+          style=" min-width: 300px; width: 90%; min-height: 500px; margin: auto;"
         />
         <PokemonInfo
           :pokemonIndex="pokemonId"
@@ -172,6 +171,24 @@ async function buscarRelaciones(type) {
 </template>
 
 <style>
+
+.body-container{
+  display: grid; 
+  grid-template-columns: 1.2fr 1fr 1fr; 
+  column-gap: 30px; 
+  width: 100%; 
+  gap: 30px; 
+  margin: auto; 
+  flex-wrap: wrap; 
+  justify-content: space-evenly;
+}
+
+@media (max-width: 1300px) {
+  .body-container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease, transform 0.7s ease;

@@ -28,10 +28,12 @@ watch([()=> props.data, ()=> props.colors],([newData, newColors])=>{
         padding: 20px;
         border-radius: 20px;
         width: 30%;
-        ">
+        display: flex;
+        flex-direction: column;
+    ">
         <h1 style="text-align: center;">{{ pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1) }}</h1>
         <img :src="pokemon.sprites.other.home.front_default" alt="" />
-        <div style="display: flex; justify-content: space-between; width: 100%;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0; width: 100%;">
             <p style="font-size: larger;">{{ pokemon.height }}m</p>
             <p style="font-size: larger;">{{ pokemon.weight }}kg</p>
         </div>

@@ -13,7 +13,7 @@
 </script>
 
 <template>
-  <div style="height: 100vh; " class="fondo">
+  <div class="fondo">
     <Buscar v-if="pagina === 'Buscar.vue'" @pagina="recibirDato" />
     <Aleatorio v-else-if="pagina === 'Aleatorio.vue'" @pagina="recibirDato" />
     <Menu v-else-if="pagina === 'Menu.vue'" @pagina="recibirDato" />
@@ -28,7 +28,6 @@
     margin: 0px;
     font-family: 'Orbitron', sans-serif;
   }
-
   
   .fondo{
     color: white;
@@ -36,6 +35,13 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    height: 100vh;
   }
+
+  @media (max-width: 1300px) {
+  .fondo{
+    height: 100%;
+  }
+}
 
 </style>
