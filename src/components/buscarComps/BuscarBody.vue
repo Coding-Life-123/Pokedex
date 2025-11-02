@@ -142,12 +142,16 @@ async function buscarRelaciones(type) {
 
 <template>
   <div>
-    <div class="main-container" style="padding: 50px">
+    <div class="main-container" style="padding: 50px; display: flex;">
       <div
         class="body-container"
-        style="margin-top: 100px; display: flex; width: 100%; gap: 30px"
+        style="display: grid; grid-template-columns: 1.1fr 1fr 1fr; column-gap: 30px; width: 100%; gap: 30px; margin: auto; flex-wrap: wrap; justify-content: space-evenly;"
       >
-        <PokemonImg :data="data" :colors="colors" />
+        <PokemonImg 
+          :data="data" 
+          :colors="colors" 
+          style=" min-width: 300px; width: 90%; min-height: 500px; margin: auto;"
+        />
         <PokemonInfo
           :pokemonIndex="pokemonId"
           :pokemonTypes="pokemonTypes"
@@ -155,8 +159,13 @@ async function buscarRelaciones(type) {
           :pokemonWeak="weak"
           :colors="colors"
           :colorsList="typeColors"
+          style=" min-width: 300px; width: 90%; min-height: 500px; margin: auto;"
         />
-        <PokemonStats :pokemonStats="stats" :colors="colors" />
+        <PokemonStats 
+          :pokemonStats="stats" 
+          :colors="colors" 
+          style=" min-width: 300px; width: 90%; min-height: 500px; margin: auto;"
+        />
       </div>
     </div>
   </div>
@@ -172,15 +181,5 @@ async function buscarRelaciones(type) {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(5px);
-}
-
-.pokemon-image {
-  height: fit-content;
-  width: fit-content;
-}
-
-.pokemon-image img {
-  margin: auto;
-  width: 100%;
 }
 </style>

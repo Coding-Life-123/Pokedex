@@ -13,10 +13,7 @@
 </script>
 
 <template>
-  <div>
-    <div style="position: fixed; top: 0; left: 0; background: black; color: white; padding: 10px; z-index: 1000;">
-      Página actual: {{ pagina }}
-    </div>
+  <div style="height: 100vh; " class="fondo">
     <Buscar v-if="pagina === 'Buscar.vue'" @pagina="recibirDato" />
     <Aleatorio v-else-if="pagina === 'Aleatorio.vue'" @pagina="recibirDato" />
     <Menu v-else-if="pagina === 'Menu.vue'" @pagina="recibirDato" />
@@ -34,7 +31,6 @@
 
   
   .fondo{
-    height: 99.99vh;
     color: white;
     background-image: url("/fondo.png");
     background-size: cover;

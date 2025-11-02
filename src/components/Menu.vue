@@ -1,5 +1,5 @@
 <template>
-    <div class="flex fondo">
+    <div class="flex" style="height: 100vh;">
         <div class="margin-auto flex column">
             <div class="logo margin-auto">
                 <img src="/pokeball.png" alt="">

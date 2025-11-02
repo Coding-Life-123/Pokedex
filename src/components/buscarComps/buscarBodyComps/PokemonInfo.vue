@@ -57,7 +57,7 @@ const cleanWeakList = computed(()=>{
         style="color: white; font-weight: 600; padding: 8px 10px; border-radius: 10px;"
         v-for="(type, index) in pokemonTypes"
         :key="index"
-        :style="{backgroundColor:`${typeColors[type.value]}`}"
+        :style="{backgroundColor:`${typeColors[type]}`}"
       >
         {{ type }}
       </p>

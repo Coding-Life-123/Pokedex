@@ -39,4 +39,13 @@ watch([()=> props.data, ()=> props.colors],([newData, newColors])=>{
 </template>
 
 <style>
+    .pokemon-image {
+    height: fit-content;
+    width: fit-content;
+    }
+
+    .pokemon-image img {
+    margin: auto;
+    width: 100%;
+    }
 </style>

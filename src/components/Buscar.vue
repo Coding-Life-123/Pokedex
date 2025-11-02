@@ -45,10 +45,11 @@ function volverMenu() {
 </script>
 
 <template>
-  <div class="fondo">
-    <h1>Hola</h1>
-    <div class="head-container" style="display: flex; width: 100%">
-      <Pikachu style="margin: 0; border-radius: 10px; position: fixed" />
+  <div class="" style="width: 100%; height: 100; @media (min-width: 1380px) {
+    height: 100vh;
+  }">
+    <div class="head-container" style=" padding-top: 40px; display: flex; width: 100%">
+      <Pikachu style=" z-index: 40; right: 0; margin-right: 30px; border-radius: 10px; position: fixed" />
       <form
         class="search-container"
         @submit.prevent
@@ -120,8 +121,10 @@ function volverMenu() {
         </transition>
       </form>
     </div>
-    <BuscarBody v-show="!loading" :key="'buscarBody'" @enviarDato="recibirColores" :pokemon="pokemon" />
-    <h1 v-show="loading">Hola</h1>
+    <div style="display: flex;">
+        <BuscarBody v-show="!loading" :key="'buscarBody'" @enviarDato="recibirColores" :pokemon="pokemon" style="margin-top: auto;" />
+        <h1 v-show="loading">Hola</h1>
+    </div>
   </div>
 </template>
 
