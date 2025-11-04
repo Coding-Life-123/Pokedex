@@ -147,23 +147,23 @@ async function buscarRelaciones(type) {
         class="body-container"
       >
         <PokemonImg 
+          class="poke-card"
           :data="data" 
-          :colors="colors" 
-          style=" min-width: 300px; width: 90%; min-height: 500px; margin: auto;"
+          :colors="colors"           
         />
         <PokemonInfo
+          class="poke-card"
           :pokemonIndex="pokemonId"
           :pokemonTypes="pokemonTypes"
           :pokemonStrong="strong"
           :pokemonWeak="weak"
           :colors="colors"
           :colorsList="typeColors"
-          style=" min-width: 300px; width: 88%; min-height: 500px; margin: auto;"
         />
         <PokemonStats 
+          class="poke-card"
           :pokemonStats="stats" 
           :colors="colors" 
-          style=" min-width: 300px; width: 88%; min-height: 500px; margin: auto;"
         />
       </div>
     </div>
@@ -174,7 +174,7 @@ async function buscarRelaciones(type) {
 
 .body-container{
   display: grid; 
-  grid-template-columns: 1.2fr 1fr 1fr; 
+  grid-template-columns: 1.1fr 1fr 1fr; 
   column-gap: 30px; 
   width: 100%; 
   gap: 30px; 
@@ -183,10 +183,51 @@ async function buscarRelaciones(type) {
   justify-content: space-evenly;
 }
 
-@media (max-width: 1300px) {
+.body-container:first-child{
+  min-width: 300px; 
+  width: 90%; 
+  min-height: 520px; 
+  margin: auto;
+}
+
+.body-container .poke-card{
+  min-width: 300px; 
+  width: 88%; 
+  min-height: 500px; 
+  margin: auto;
+}
+
+@media (max-width: 1300px) and (min-width:900px) {
   .body-container{
     grid-template-columns: 1fr 1fr;
   }
+
+  .poke-card{
+    width: 600px;
+  }
+}
+
+@media (max-width:900px) and (min-width:500px){
+  .body-container{
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+}
+
+@media (max-width:500px) and (min-width:300px){
+  .main-container{
+    margin: auto;
+    padding: 0px !important;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .body-container{
+    grid-template-columns: 300px;
+    margin: auto;
+    width: 90% !important;
+    padding: 0px !important;
+  }
+
 }
 
 .fade-enter-active,

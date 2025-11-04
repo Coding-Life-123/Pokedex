@@ -33,19 +33,7 @@ const cleanWeakList = computed(()=>{
 
 <template>
   <div
-    style="
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      width: 30%;
-      margin: 0 auto;
-      text-align: center;
-      background-color: rgba(50, 50, 50, 0.65);
-      backdrop-filter: blur(8px);
-      padding: 20px;
-      border-radius: 20px;
-      transition: color 1s ease;
-    "
+    class="pokemon-info-main"
     :style="{
       color: `${colors[0]}`,
     }"
@@ -87,4 +75,18 @@ const cleanWeakList = computed(()=>{
   </div>
 </template>
 
-<style></style>
+<style>
+  .pokemon-info-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(50, 50, 50, 0.65);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 20px;
+    transition: color 1s ease;
+  }
+</style>
